@@ -8,11 +8,11 @@ export const insert = async (url, user_id, shorted) => {
   );
 };
 
-export const select = async (email) => {
+export const selectById = async (id) => {
   return await db.query(
     `
-    SELECT * FROM users WHERE email = $1 ;
+    SELECT id, shorted AS "shortedUrl", url FROM urls WHERE id = $1 ;
     `,
-    [email]
+    [id]
   );
 };
