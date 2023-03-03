@@ -30,7 +30,7 @@ CREATE TABLE public.urls (
     user_id integer NOT NULL,
     shorted character varying(8) NOT NULL,
     times_visited integer DEFAULT 0 NOT NULL,
-    "createdAt " timestamp without time zone DEFAULT now() NOT NULL
+    created_at timestamp without time zone DEFAULT now()
 );
 
 
@@ -63,7 +63,7 @@ CREATE TABLE public.users (
     name character varying(50) NOT NULL,
     email text NOT NULL,
     password text NOT NULL,
-    "createdAt " timestamp without time zone DEFAULT now() NOT NULL
+    created_at timestamp without time zone DEFAULT now() NOT NULL
 );
 
 
