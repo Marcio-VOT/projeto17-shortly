@@ -3,7 +3,8 @@ import jwt from "jsonwebtoken";
 export const tokenValidate = async (req, res, next) => {
   const { authorization } = req.headers;
   const token = authorization?.replace("Bearer ", "");
-  const SECRET = process.env.SECRET;
+  const SECRET = process.env.SECRET || "segredo";
+
   try {
     res.locals.tokenValidation = await jwt.verify(token, SECRET);
     next();

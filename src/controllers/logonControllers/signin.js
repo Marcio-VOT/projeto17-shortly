@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import * as LogonRepository from "../../repositories/logon.js";
 
-const SECRET = process.env.SECRET;
+const SECRET = process.env.SECRET || "segredo";
 
 export const signin = async (req, res) => {
   const { email, password } = req.body;
