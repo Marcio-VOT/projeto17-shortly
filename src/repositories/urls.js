@@ -13,7 +13,7 @@ export const insert = async (url, user_id, shorted) => {
 export const selectById = async (id) => {
   return await db.query(
     `
-    SELECT id, shorted AS "shortedUrl", url 
+    SELECT id, shorted AS "shortUrl", url 
     FROM urls 
     WHERE id = $1 ;
     `,
