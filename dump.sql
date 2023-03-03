@@ -30,7 +30,7 @@ CREATE TABLE public.urls (
     user_id integer NOT NULL,
     shorted character varying(8) NOT NULL,
     times_visited integer DEFAULT 0 NOT NULL,
-    "createdAt " date DEFAULT now() NOT NULL
+    "createdAt " timestamp without time zone DEFAULT now() NOT NULL
 );
 
 
@@ -63,7 +63,7 @@ CREATE TABLE public.users (
     name character varying(50) NOT NULL,
     email text NOT NULL,
     password text NOT NULL,
-    "createdAt " date DEFAULT now() NOT NULL
+    "createdAt " timestamp without time zone DEFAULT now() NOT NULL
 );
 
 
@@ -105,22 +105,22 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 -- Data for Name: urls; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.urls VALUES (1, 'https://votaeaaea@gmail.com', 42, 'oobcwgUK', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (2, 'https://votaeaaea@gmail.com', 42, 'Ee0tRtCP', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (3, 'https://votaeaaea@gmail.com', 42, 'bttcxvsA', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (4, 'https://votaeaaea@gmail.com', 42, 'z0ktPBOw', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (5, 'https://votaeaaea@gmail.com', 42, 'KeIwo2DY', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (6, 'https://votaeaaea@gmail.com', 42, 'ocFsDg_H', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (14, 'https://votaeaaea@gmail.com', 42, '64G2YQ4g', 0, '2023-03-03');
-INSERT INTO public.urls VALUES (15, 'https://sailsjs.com/documentation/reference/response-res/res-redirect', 42, 'i5RUo1OW', 3, '2023-03-03');
+INSERT INTO public.urls VALUES (1, 'https://votaeaaea@gmail.com', 42, 'oobcwgUK', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (2, 'https://votaeaaea@gmail.com', 42, 'Ee0tRtCP', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (3, 'https://votaeaaea@gmail.com', 42, 'bttcxvsA', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (4, 'https://votaeaaea@gmail.com', 42, 'z0ktPBOw', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (5, 'https://votaeaaea@gmail.com', 42, 'KeIwo2DY', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (6, 'https://votaeaaea@gmail.com', 42, 'ocFsDg_H', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (14, 'https://votaeaaea@gmail.com', 42, '64G2YQ4g', 0, '2023-03-03 00:00:00');
+INSERT INTO public.urls VALUES (15, 'https://sailsjs.com/documentation/reference/response-res/res-redirect', 42, 'i5RUo1OW', 3, '2023-03-03 00:00:00');
 
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.users VALUES (42, 'vot', 'marc1@gmail.com', '$2b$10$6/Lfs2b9ib4E/fGJoSWEaurI6SE9I1IbyPWP7RF5idm41lyPBJSpS', '2023-03-03');
-INSERT INTO public.users VALUES (43, 'babalu', 'marc2@gmail.com', '$2b$10$LiPH2HPWKww8/hdo/fxOyOfqclHFDFWIL7u4sv52pEMZN6RdQo40.', '2023-03-03');
+INSERT INTO public.users VALUES (42, 'vot', 'marc1@gmail.com', '$2b$10$6/Lfs2b9ib4E/fGJoSWEaurI6SE9I1IbyPWP7RF5idm41lyPBJSpS', '2023-03-03 00:00:00');
+INSERT INTO public.users VALUES (43, 'babalu', 'marc2@gmail.com', '$2b$10$LiPH2HPWKww8/hdo/fxOyOfqclHFDFWIL7u4sv52pEMZN6RdQo40.', '2023-03-03 00:00:00');
 
 
 --
