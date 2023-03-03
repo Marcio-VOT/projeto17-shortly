@@ -38,7 +38,8 @@ export const selectRank = async () => {
 		LEFT JOIN urls
 		ON users.id = urls.user_id
 		GROUP BY users.id
-		ORDER BY "visitCount" DESC;
+		ORDER BY "visitCount" DESC
+    LIMIT 10;
         `
   );
 };
