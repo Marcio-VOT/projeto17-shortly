@@ -16,3 +16,12 @@ export const selectById = async (id) => {
     [id]
   );
 };
+
+export const redirectUrl = async (shorted) => {
+  return await db.query(
+    `
+      UPDATE urls SET times_visited = times_visited + 1 WHERE shorted = $1 RETURNING url;
+      `,
+    [shorted]
+  );
+};
