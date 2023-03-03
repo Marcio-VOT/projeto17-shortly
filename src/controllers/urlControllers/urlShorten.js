@@ -10,7 +10,8 @@ export const urlShorten = async (req, res) => {
     const { rows } = await LogonRepository.select(email);
     const shorted = nanoid(8);
     const returned = await UrlRepository.insert(url, rows[0].id, shorted);
-    res.send({ id: returned.rows[0].id, shortUrl: shorted }).status(201);
+
+    res.status(201).send({ id: returned.rows[0].id, shortUrl: shorted });
   } catch (error) {
     if (error.code == 23505) {
       return res.status(500).send("Internal Error");
