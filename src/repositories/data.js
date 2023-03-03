@@ -25,3 +25,20 @@ export const selectMyData = async (email) => {
     [email]
   );
 };
+
+export const selectRank = async () => {
+  return await db.query(
+    `
+    SELECT  
+		users.id AS id, 
+		users.name AS name, 
+		count(urls.user_id) AS "linksCount",
+		COALESCE(SUM(urls.times_visited ), 0) AS "visitCount"
+		FROM users
+		LEFT JOIN urls
+		ON users.id = urls.user_id
+		GROUP BY users.id
+		ORDER BY "visitCount" DESC;
+        `
+  );
+};
