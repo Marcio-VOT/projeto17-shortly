@@ -7,15 +7,15 @@ const SECRET = process.env.SECRET;
 export const signin = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await LogonRepository.select(email);
+    const { rowCount, rows } = await LogonRepository.select(email);
 
-    if (!user.rowCount || !bcrypt.compareSync(password, user.rows[0].password))
+    if (!rowCount || !bcrypt.compareSync(password, rows[0].password)) {
       return res.sendStatus(401);
-
-    const token = jwt.sign({ email, password }, SECRET, {
+    }
+    const token = await jwt.sign({ email, password }, SECRET, {
       expiresIn: "1 day",
     });
-    jwt.verify(token, SECRET);
+
     res.status(200).send({ token });
   } catch (error) {
     res.status(500).send(error.message);
